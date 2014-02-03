@@ -42,10 +42,4 @@
     </LinearLayout>
     <ImageView android:layout_width="100dp" android:layout_height="65dp" android:layout_alignParentTop="true"
                android:layout_alignParentRight="true" android:src="@drawable/mblogo" android:layout_marginTop="-10dp"/>
-    <Button
-            android:id="@+id/clearbut"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Clear overlays"
-            android:background="#3887be" android:alpha="0.8"/>
 </RelativeLayout>

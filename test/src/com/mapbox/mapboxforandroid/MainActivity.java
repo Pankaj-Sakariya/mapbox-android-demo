@@ -35,26 +35,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        TestFlight.takeOff(getApplication(), "b1425515-299c-4aaf-b85e-b9a7c99b0fa5");
         setContentView(R.layout.activity_main);
         mv = (MapView)findViewById(R.id.mapview);
         mapController = mv.getController();
         mapController.setCenter(startingPoint);
         mapController.setZoom(4);
-        mv.parseFromGeoJSON("https://gist.github.com/fdansv/8541618/raw/09da8aef983c8ffeb814d0a1baa8ecf563555b5d/geojsonpointtest");
         setButtonListeners();
         Marker m = new Marker(mv, "Hello", "World", new GeoPoint(0f, 0f));
         m.setIcon(new Icon(Icon.Size.l, "bus", "000"));
         mv.addMarker(m);
-
-        mv.setOnTilesLoadedListener(new MapView.TilesLoadedListener() {
-            @Override
-            public boolean onTilesLoaded() {
-                System.out.println("All tiles have been loaded");
-                return false;
-            }
-        });
-        mv.setVisibility(View.VISIBLE);
     }
 
     private void setButtonListeners() {
